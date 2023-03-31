@@ -1,0 +1,1 @@
+Crie um programa que seja capaz de percorrer uma lista de numeros e imprima cada numero par encontrado.
