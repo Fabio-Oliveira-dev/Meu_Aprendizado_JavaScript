@@ -28,6 +28,6 @@ class Carro {
 
 let Celta = new Carro('checrolet', 'vermelho', 1 / 10);
 let Palio = new Carro('Fiat', 'Preto', 1 / 10);
-console.log(Celta.calculoGastoViagem(100,6.79).toFixed(2));
+console.log(Celta.calculoGastoViagem(100,4.70).toFixed(2));
 console.log(Celta.calculoGastoViagem(70,5).toFixed(2));
 
