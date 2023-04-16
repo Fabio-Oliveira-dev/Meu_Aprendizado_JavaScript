@@ -4,8 +4,10 @@ const pokemonList = document.getElementById('pokemonList')
 // Criando botão de paginação
 const loadMoreButton = document.getElementById('loadMoreButton')
 
-const limit = 5
+const maxRecords = 151
+const limit = 10
 let offset = 0;
+
 
 
 
@@ -40,5 +42,16 @@ loadPokemonItens(offset, limit)
 // Evento de quando clicar no botão de peginação
 loadMoreButton.addEventListener('click', () => {
     offset += limit
-    loadPokemonItens(offset, limit)
+    const qtdRecordsWithNexPage = offset + limit
+
+    if(qtdRecordsWithNexPage >= maxRecords) {
+        const newLimit = maxRecords - offset
+        loadPokemonItens(offset, newLimit)
+        
+        loadMoreButton.parentElement.removeChild(loadMoreButton)
+    } else {
+        loadPokemonItens(offset, limit)
+    }
+
+    
 })
